@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>22 Mar 2023, 11:17</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.ISelectKanbanOrListOption()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.a_message_should_be_displayed(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="31250400">0.031</td>
+              <td class="duration" data-value="31250400">0.031</td>
+              <td class="duration" data-value="31250400">0.031</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.an_error_message_should_be_displayed()</td>
+              <td>1</td>
+              <td class="duration" data-value="61355200">0.061</td>
+              <td class="duration" data-value="61355200">0.061</td>
+              <td class="duration" data-value="61355200">0.061</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.theNumberOfCustomersShouldIncreaseBy(int)</td>
+              <td>1</td>
+              <td class="duration" data-value="10219321100">10.219</td>
+              <td class="duration" data-value="10219321100">10.219</td>
+              <td class="duration" data-value="10219321100">10.219</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.the_customers_display_should_change_accordingly()</td>
+              <td>1</td>
+              <td class="duration" data-value="15304327400">15.304</td>
+              <td class="duration" data-value="15304327400">15.304</td>
+              <td class="duration" data-value="15304327400">15.304</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.the_new_customer_should_be_listed_in_the_customers_list()</td>
+              <td>1</td>
+              <td class="duration" data-value="15389349100">15.389</td>
+              <td class="duration" data-value="15389349100">15.389</td>
+              <td class="duration" data-value="15389349100">15.389</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.the_page_title_should_contain_the_new_customer_name()</td>
+              <td>1</td>
+              <td class="duration" data-value="5106597000">5.106</td>
+              <td class="duration" data-value="5106597000">5.106</td>
+              <td class="duration" data-value="5106597000">5.106</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.&#305;CountTheNumberOfCustomers()</td>
+              <td>1</td>
+              <td class="duration" data-value="53326400">0.053</td>
+              <td class="duration" data-value="53326400">0.053</td>
+              <td class="duration" data-value="53326400">0.053</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.&#305;_click_on_the_create_button()</td>
+              <td>4</td>
+              <td class="duration" data-value="92008375">0.092</td>
+              <td class="duration" data-value="92008375">0.120</td>
+              <td class="duration" data-value="368033500">0.368</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.&#305;_click_on_the_discard_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="5110482600">5.110</td>
+              <td class="duration" data-value="5110482600">5.110</td>
+              <td class="duration" data-value="5110482600">5.110</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.&#305;_click_on_the_save_button()</td>
+              <td>3</td>
+              <td class="duration" data-value="5120890533">5.120</td>
+              <td class="duration" data-value="5120890533">5.152</td>
+              <td class="duration" data-value="15362671600">15.362</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.&#305;_enter_a_valid_name_for_the_customer()</td>
+              <td>2</td>
+              <td class="duration" data-value="1439142700">1.439</td>
+              <td class="duration" data-value="1439142700">1.451</td>
+              <td class="duration" data-value="2878285400">2.878</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.&#305;_leave_the_name_field_empty()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Customer_StepDefinitions.&#305;_should_be_redirected_back_to_the_customers_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="1984937800">1.984</td>
+              <td class="duration" data-value="1984937800">1.984</td>
+              <td class="duration" data-value="1984937800">1.984</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_clicks_the_customers_button()</td>
+              <td>5</td>
+              <td class="duration" data-value="5116238400">5.116</td>
+              <td class="duration" data-value="5116238400">5.127</td>
+              <td class="duration" data-value="25581192000">25.581</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_clicks_the_login_button()</td>
+              <td>5</td>
+              <td class="duration" data-value="1220448660">1.220</td>
+              <td class="duration" data-value="1220448660">2.421</td>
+              <td class="duration" data-value="6102243300">6.102</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_clicks_the_sales_button()</td>
+              <td>5</td>
+              <td class="duration" data-value="5148134000">5.148</td>
+              <td class="duration" data-value="5148134000">5.171</td>
+              <td class="duration" data-value="25740670000">25.740</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_enters_the_password()</td>
+              <td>5</td>
+              <td class="duration" data-value="86806120">0.086</td>
+              <td class="duration" data-value="86806120">0.090</td>
+              <td class="duration" data-value="434030600">0.434</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_enters_the_username()</td>
+              <td>5</td>
+              <td class="duration" data-value="92891340">0.092</td>
+              <td class="duration" data-value="92891340">0.118</td>
+              <td class="duration" data-value="464456700">0.464</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_is_on_the_login_page()</td>
+              <td>5</td>
+              <td class="duration" data-value="2149594240">2.149</td>
+              <td class="duration" data-value="2149594240">7.772</td>
+              <td class="duration" data-value="10747971200">10.747</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_should_see_the_customers_page()</td>
+              <td>5</td>
+              <td class="duration" data-value="5072631120">5.072</td>
+              <td class="duration" data-value="5072631120">5.090</td>
+              <td class="duration" data-value="25363155600">25.363</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.centrilli.step_definitions.Login_StepDefinitions.user_should_see_the_main_page()</td>
+              <td>5</td>
+              <td class="duration" data-value="783752680">0.783</td>
+              <td class="duration" data-value="783752680">0.991</td>
+              <td class="duration" data-value="3918763400">3.918</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>22</td>
+            <td>60</td>
+            <td class="duration">2.837</td>
+            <td class="duration">25.740</td>
+            <td class="duration">2:50.222</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
