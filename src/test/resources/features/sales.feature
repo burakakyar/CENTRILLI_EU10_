@@ -20,7 +20,7 @@ Feature: Sales Functionalities
     And User clicks the Customers button
     Then User should see the Customers Page
 
-
+  @wip
   Scenario: Verify that user can create a Customer
     When I click on the Create button
     And I enter a valid name for the Customer

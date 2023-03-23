@@ -75,6 +75,11 @@ public class DashboardPage {
 
     @FindBy(xpath = "//span[@class='o_pager_limit']")
     public WebElement totalNumberOfCustomer;
+
+    @FindBy(xpath = "//div[@class='o_loading']")
+    public WebElement loadingBar;
+
+
     
     
 
