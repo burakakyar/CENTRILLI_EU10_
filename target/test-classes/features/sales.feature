@@ -20,7 +20,7 @@ Feature: Sales Functionalities
     And User clicks the Customers button
     Then User should see the Customers Page
 
-  @wip
+
   Scenario: Verify that user can create a Customer
     When I click on the Create button
     And I enter a valid name for the Customer
@@ -29,7 +29,7 @@ Feature: Sales Functionalities
     And a "Contact created" message should be displayed
     And the new Customer should be listed in the Customers list
 
-
+  @wip
   Scenario: Verify that user cannot create a Customer without typing name (empty name)
     When I click on the Create button
     And I leave the name field empty

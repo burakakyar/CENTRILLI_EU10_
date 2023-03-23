@@ -83,7 +83,9 @@ public class Customer_StepDefinitions {
 
     @When("I leave the name field empty")
     public void ı_leave_the_name_field_empty() {
-        // no need to write a code here
+        if (!(dashboardPage.inputField.getText().isEmpty())){
+            dashboardPage.inputField.clear();
+        }
     }
 
     @Then("an error message should be displayed")
@@ -93,7 +95,6 @@ public class Customer_StepDefinitions {
 
     @When("I click on the Discard button")
     public void ı_click_on_the_discard_button() {
-//        Thread.sleep(5000);
         wait.until(ExpectedConditions.invisibilityOf(dashboardPage.loadingBar));
         dashboardPage.discardBtn.click();
     }
@@ -103,45 +104,32 @@ public class Customer_StepDefinitions {
         Assert.assertEquals("Customers".toLowerCase(), dashboardPage.customersPageTitle.getText().toLowerCase());
     }
 
-    @When("I select Kanban or List option")
-    public void ISelectKanbanOrListOption()  {
+    @When("I select Kanban or List option the Customers display should change accordingly")
+    public void ISelectKanbanOrListOptionTheCustomersDisplayShouldChangeAccordingly() {
 
-    }
-
-    @Then("the Customers display should change accordingly")
-    public void the_customers_display_should_change_accordingly()  {
-        System.out.println("123456");
-//        Thread.sleep(5000);
         wait.until(ExpectedConditions.invisibilityOf(dashboardPage.loadingBar));
         dashboardPage.buttonList.click();
-        //Thread.sleep(5000);
+
         wait.until(ExpectedConditions.invisibilityOf(dashboardPage.loadingBar));
         Assert.assertTrue(dashboardPage.tableOfList.isDisplayed());
 
-        // System.out.println(dashboardPage.firstImage.isDisplayed()+" 1");
-
         dashboardPage.buttonKanban.click();
-        //Thread.sleep(5000);
         wait.until(ExpectedConditions.invisibilityOf(dashboardPage.loadingBar));
-        Assert.assertTrue(dashboardPage.firstImage.isDisplayed());
-        // System.out.println(dashboardPage.firstImage.isDisplayed()+"2");
-    }
 
-    // int total = 34;
+        Assert.assertTrue(dashboardPage.firstImage.isDisplayed());
+    }
 
     @When("I count the number of Customers")
     public void ıCountTheNumberOfCustomers() {
         totalNumber = Integer.parseInt(dashboardPage.totalNumberOfCustomer.getText());
         System.out.println("totalNumber = " + totalNumber);
-
     }
 
     @Then("the number of Customers should increase by {int}")
-    public void theNumberOfCustomersShouldIncreaseBy(int arg0) throws InterruptedException {
-       // Thread.sleep(5000);
+    public void theNumberOfCustomersShouldIncreaseBy(int arg0) {
         wait.until(ExpectedConditions.invisibilityOf(dashboardPage.loadingBar));
         dashboardPage.customersBtn.click();
-       // Thread.sleep(5000);
+
         wait.until(ExpectedConditions.invisibilityOf(dashboardPage.loadingBar));
         Assert.assertTrue(totalNumber == Integer.parseInt(dashboardPage.totalNumberOfCustomer.getText()) - arg0);
 
