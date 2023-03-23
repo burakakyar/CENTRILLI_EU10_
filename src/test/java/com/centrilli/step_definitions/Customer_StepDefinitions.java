@@ -16,7 +16,7 @@ public class Customer_StepDefinitions {
     int totalNumber;
     Faker faker = new Faker();
     String name;
-    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 15);
 
     @When("I click on the Create button")
     public void ı_click_on_the_create_button() {

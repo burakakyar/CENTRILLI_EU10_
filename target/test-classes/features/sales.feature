@@ -1,3 +1,4 @@
+@CENTRIL10-404
 Feature: Sales Functionalities
   US 37 - Sales Functionality (Sales/Orders/Customers)
   Acceptance Criteria:
@@ -10,7 +11,8 @@ Feature: Sales Functionalities
   7. Verify that user can change Customers display to Kanban / List
   8- Verify that all Customers number increased 1
 
-  Background: I am on the Customers page
+
+  Background: User is on the Customers page
     Given User is on the login page
     When User enters the username
     And User enters the password
@@ -20,7 +22,7 @@ Feature: Sales Functionalities
     And User clicks the Customers button
     Then User should see the Customers Page
 
-
+  @CENTRIL10-399
   Scenario: Verify that user can create a Customer
     When I click on the Create button
     And I enter a valid name for the Customer
@@ -29,25 +31,25 @@ Feature: Sales Functionalities
     And a "Contact created" message should be displayed
     And the new Customer should be listed in the Customers list
 
-  @wip
+  @CENTRIL10-400
   Scenario: Verify that user cannot create a Customer without typing name (empty name)
     When I click on the Create button
     And I leave the name field empty
     And I click on the Save button
     Then an error message should be displayed
 
-
+  @CENTRIL10-401
   Scenario: Verify that user can cancel creating by clicking Discard button
     When I click on the Create button
     And I click on the Discard button
     Then I should be redirected back to the Customers page
 
-
+  @CENTRIL10-402
   Scenario: Verify that user can change Customers display to Kanban / List
-    When I select Kanban or List option
-    Then the Customers display should change accordingly
+    When I select Kanban or List option the Customers display should change accordingly
 
 
+  @CENTRIL10-403
   Scenario: Verify that all Customers number increased 1
     When I count the number of Customers
     And I click on the Create button
